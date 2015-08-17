@@ -16,7 +16,7 @@ public class PigSaysStop {
 		if (!event.entity.worldObj.isRemote) {
 			event.entityPlayer.addChatComponentMessage(
 					new ChatComponentText(
-							EnumChatFormatting.GOLD + "Please stop hitting me - you will regret it!!!"
+							EnumChatFormatting.GOLD + "Please stop hitting me!"
 					)
 			);		
 		}

@@ -2,23 +2,41 @@ package com.theupstairsroom.roadiemod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 public class BlockToilet extends Block
 {
 	public static String BLOCK_NAME = "blockToilet";
 	public static Integer POOP_PER_FLUSH = 2;
+	public IIcon[] icons = new IIcon[6];
+	
 	public BlockToilet() {
 		super(Material.wood);
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 		this.setBlockTextureName(RoadieMod.MODID + ":" + BLOCK_NAME);
 		this.setBlockName(BLOCK_NAME);
 	}
-
+	
+	@Override
+	public void registerBlockIcons(IIconRegister reg)
+	{
+		for (int i = 0; i < 6; i++) {
+			this.icons[i] = reg.registerIcon(this.textureName + "_" + i);
+		}
+	}
+	
+	@Override
+	public IIcon getIcon(int side, int meta)
+	{
+		return this.icons[side];
+	}
+	
 	@Override
 	public boolean onBlockActivated(World world, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer entityPlayer, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
 	{
@@ -37,6 +55,8 @@ public class BlockToilet extends Block
 					poopStack);
 			if (!entityPlayer.worldObj.isRemote) {
     			entityPlayer.worldObj.spawnEntityInWorld(poopEntity);
+    			world.playSoundAtEntity(entityPlayer, "random.splash", 1, 1);
+    	
 			}
 			props.removePoop(POOP_PER_FLUSH);
 			if (!props.fullOfPoop()) {

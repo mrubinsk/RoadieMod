@@ -8,7 +8,8 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class CommonProxy {
 
-    public void preInit(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent e)
+    {
 		//MinecraftForge.EVENT_BUS.register(new PigsDroppingDiamonds());
 		//MinecraftForge.EVENT_BUS.register(new PigsSpawnEnderman());
     	MinecraftForge.EVENT_BUS.register(new RoadieModEventHandler());
@@ -16,12 +17,14 @@ public class CommonProxy {
     	RoadieMod.network.registerMessage(PoopMessage.Handler.class, PoopMessage.class, 0, Side.CLIENT);
     }
 
-    public void init(FMLInitializationEvent e) {
+    public void init(FMLInitializationEvent e)
+    {
 		Items.init();
 		Blocks.init();
     }
 
-    public void postInit(FMLPostInitializationEvent e) {
-  
+    public void postInit(FMLPostInitializationEvent e)
+    {
+    	RoadieRecipies.init();
     }
 }

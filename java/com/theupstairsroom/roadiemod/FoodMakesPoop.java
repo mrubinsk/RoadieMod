@@ -6,6 +6,7 @@ import net.minecraft.item.ItemFood;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 
 public class FoodMakesPoop {
+	public static double FOOD_TO_POOP_MULTIPLIER = 0.25;
 	
 	@SubscribeEvent
 	public void startUsingFood(PlayerUseItemEvent.Start event) {
@@ -25,6 +26,7 @@ public class FoodMakesPoop {
 			ExtendedPlayerP props = ExtendedPlayerP.get(event.entityPlayer);
 			ItemFood food = (ItemFood) event.item.getItem();
 			// For now, use healing value. In future, make custom mapping of food/poop amount.
+			//props.addPoop((int)(food.func_150905_g(event.item) * FoodMakesPoop.FOOD_TO_POOP_MULTIPLIER));
 			props.addPoop(food.func_150905_g(event.item));
 			if (props.fullOfPoop()) {
 				player.capabilities.setPlayerWalkSpeed(0.05F);

@@ -12,7 +12,7 @@ public class ExtendedPlayerP implements IExtendedEntityProperties {
 	public final static String EXT_PROP_NAME = "ExtendedPlayerP";
     private final EntityPlayer player;
 	private int currentPoopLevel;
-	int MAX_POOP_LEVEL = 10;
+	int MAX_POOP_LEVEL = 20;
 	
 	/**
 	 * Constructor
