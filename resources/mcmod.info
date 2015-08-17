@@ -1,0 +1,16 @@
+[
+{
+  "modid": "rm",
+  "name": "RoadieMod",
+  "description": "A bunch of Roadie inspired mods...",
+  "version": "1.0.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["mrubinsk", "jrubinsk"],
+  "credits": "Jordyn Rubinsky, for the inspiration and ideas.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
