@@ -18,10 +18,14 @@ import net.minecraft.item.Item;
 
 public class Items {
 	public static Item roadiePoop;
+	public static Item roadieFertilizer;
 	
 	public static final void init()
 	{
 		roadiePoop = new ItemPoop();
 		GameRegistry.registerItem(roadiePoop, "itemPoop");
+		
+		roadieFertilizer = new ItemFertilizer();
+		GameRegistry.registerItem(roadieFertilizer, "itemFertilizer");
 	}
 }

@@ -33,6 +33,12 @@ public class RoadieRecipies
     		'w', new ItemStack(net.minecraft.init.Blocks.planks, 1, OreDictionary.WILDCARD_VALUE),
     		'h', new ItemStack(net.minecraft.init.Items.water_bucket)
 	    );
+		
+		GameRegistry.addSmelting(
+				Items.roadiePoop,
+				new ItemStack(Items.roadieFertilizer),
+				.1F
+		);
 	}
 }
 	

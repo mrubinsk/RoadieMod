@@ -23,4 +23,5 @@ public class ItemPoop extends Item {
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 		this.setTextureName(RoadieMod.MODID + ":itemPoop");
 	}
+
 }
